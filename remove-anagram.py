@@ -4,7 +4,7 @@ In one operation, select any index i such that 0 < i < words.length and words[i 
 Return words after performing all operations. It can be shown that selecting the indices for each operation in any arbitrary order will lead to the same result.
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase using all the original letters exactly once. For example, "dacb" is an anagram of "abdc".
 '''
-
+import collections
 
 class Solution:
     def removeAnagrams(self, words: List[str]) -> List[str]:
@@ -17,6 +17,8 @@ class Solution:
                 res.append(words[index])
         return res
 
+  #     without 'collections' module. 
+  #
   #     w= sorted(list(words[index]))
   #     x= sorted(list(words[index-1]))
   #     b = all([(w.count(item)==x.count(item) and len(w)==len(x)) for item in w])
